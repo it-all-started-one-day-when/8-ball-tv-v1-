@@ -1,11 +1,11 @@
-<script context = 'module'>
-    export let Width=320;
-    export let Height=240; 
-    export let Vid={};
+<script>
+    export let Width;
+    export let Height; 
+    export let Vid;
     
     
 </script>
-
+<div>
 <!-- svelte-ignore a11y-media-has-caption -->
 <video width={Width} height={Height} controls>
     <source src={Vid.link}>
@@ -14,9 +14,7 @@
     <p>
         {Vid.title}, by {Vid.director}, {Vid.duration} long. 
     </p>
-<main>
-
-</main>
+</div>
 
 
 <style>

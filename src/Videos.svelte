@@ -1,22 +1,18 @@
 <script>
     import {ALL_VIDEOS} from './archive.svelte';
-    import Video, {Height, Width, Vid} from './Video.svelte';
-    import Slider from 'svelte-slider@latest';
+    import Video from './Video.svelte';
     let singleValue = null;
 </script>
 
-<div class="slider">
-	<Slider on:change={(event) => singleValue = event.detail[1]} value={[0, 1]} single />
-</div>
-
 <main>
 {#each ALL_VIDEOS as v}
-<!-- <Video Height={200}, Width = {400}, Vid={v}>
+ <Video  Width =100%, Vid={v}>
 
-</Video> -->
+</Video>
+
 
 <!-- svelte-ignore a11y-media-has-caption -->
-<div>
+<!-- <div>
 <video id ={v.id} width=100% controls>
     <source src={v.link}>
         your browser does not support video tag, please visit {v.link}
@@ -24,7 +20,7 @@
     <p>
         {v.title}, by {v.director}, {v.duration} long. 
     </p> <button>+</button>
-</div>
+</div> -->
 {/each}
 </main>
 
