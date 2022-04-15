@@ -1,5 +1,13 @@
 <script>
 let width=100;
+import {widthvar} from './stores.js'
+function x(){
+    widthvar.set(width)
+};
+let countvalue;
+    widthvar.subscribe(value => {
+        countvalue = value;
+    });
 
 </script>
 
@@ -11,8 +19,9 @@ let width=100;
       bind:value={width}
       class="slider"
       id="myRange"
+      on:change={x}
     />
-    <p>{width}</p>
+    <p>{countvalue}</p>
   </div>
  
 

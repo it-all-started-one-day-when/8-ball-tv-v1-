@@ -4,7 +4,7 @@
 	import Header from './Header.svelte'
 </script>
 <Banner></Banner>
-<Header></Header>
+ <Header></Header> 
 <main>
 	
 

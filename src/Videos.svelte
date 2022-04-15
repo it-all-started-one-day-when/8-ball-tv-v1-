@@ -1,13 +1,19 @@
 <script>
     import {ALL_VIDEOS} from './archive.svelte';
     import Video from './Video.svelte';
+    import {widthvar} from './stores.js'
     let singleValue = null;
     let width=100;
+
+    let countvalue;
+    widthvar.subscribe(value => {
+        countvalue = value;
+    });
 </script>
 
 
-<main style=" --vidwidth:{width}px;">
-    <div class="slidecontainer">
+<main style=" --vidwidth:{countvalue}px;">
+    <!-- <div class="slidecontainer">
         <input
           type="range"
           min="50"
@@ -18,7 +24,7 @@
         />
         <p>{width}</p>
         <br>
-      </div>
+      </div> -->
 
 {#each ALL_VIDEOS as v}
  <Video  Width =100%, Vid={v}>
@@ -45,7 +51,7 @@
     list-style:none;
     display: grid;
    
-    grid-template-columns: repeat(auto-fit, var(--vidwidth));
+    grid-template-columns: repeat(auto-fit, minmax(var(--vidwidth), 1fr));
     grid-auto-rows: max-content;
     grid-gap: 10px;
 }
