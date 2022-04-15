@@ -2,9 +2,24 @@
     import {ALL_VIDEOS} from './archive.svelte';
     import Video from './Video.svelte';
     let singleValue = null;
+    let width=100;
 </script>
 
-<main>
+
+<main style=" --vidwidth:{width}px;">
+    <div class="slidecontainer">
+        <input
+          type="range"
+          min="50"
+          max="500"
+          bind:value={width}
+          class="slider"
+          id="myRange"
+        />
+        <p>{width}</p>
+        <br>
+      </div>
+
 {#each ALL_VIDEOS as v}
  <Video  Width =100%, Vid={v}>
 
@@ -25,10 +40,12 @@
 </main>
 
 <style>
+
   main{
     list-style:none;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+   
+    grid-template-columns: repeat(auto-fit, var(--vidwidth));
     grid-auto-rows: max-content;
     grid-gap: 10px;
 }

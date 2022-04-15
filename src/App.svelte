@@ -1,8 +1,10 @@
 <script>
 	import Videos from './Videos.svelte'
 	import Banner from './Banner.svelte'
+	import Header from './Header.svelte'
 </script>
 <Banner></Banner>
+<Header></Header>
 <main>
 	
 
