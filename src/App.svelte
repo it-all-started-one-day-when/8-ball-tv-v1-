@@ -1,26 +1,39 @@
 <script>
-	import Videos from './Videos.svelte'
-	import Banner from './Banner.svelte'
-	import Header from './Header.svelte'
+	import Videos from './Videos.svelte';
+	import Banner from './Banner.svelte';
+	import Header from './Header.svelte';
+	import Queue from './Queue.svelte';;
 </script>
+
 <Banner></Banner>
- <Header></Header> 
+
 <main>
-	
+	<Header></Header> 	
+	<div class="vids">
+		<Videos></Videos>
+	</div> 
 
- <Videos>
-
-</Videos> 
+	<Queue></Queue>
 
 
 </main>
 
 <style>
+	.vids{
+		overflow-y:auto;
+		box-sizing: border-box;
+	}
 	main {
+		
 		text-align: center;
 		padding: 1em;
 		max-width: 240px;
 		margin: 0 auto;
+
+		display: grid;
+		grid-gap: 10px;
+		grid-template-rows: 1fr 60vh 2fr;
+
 	}
 
 
