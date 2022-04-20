@@ -1,45 +1,37 @@
 <script>
+	import Router from 'svelte-spa-router';
+	import Home from './routes/Home.svelte';
+	import About from './routes/About.svelte';
+	import Video from './routes/Video.svelte';
+	import Notfound from './routes/Notfound.svelte';
+
 	import Videos from './Videos.svelte';
 	import Banner from './Banner.svelte';
 	import Header from './Header.svelte';
-	import Queue from './Queue.svelte';;
+	import Queue from './Queue.svelte';
+
+
+	let routes = {
+			"/": Home,
+			"/about": About,
+			"/video/:id": Video,
+
+
+			"*": Notfound
+
+	};
+
 </script>
 
 <Banner></Banner>
+<Header></Header>
 
 <main>
-	<Header></Header> 	
-	<div class="vids">
-		<Videos></Videos>
-	</div> 
-
-	<Queue></Queue>
-
+	<Router {routes}/>
+	
 
 </main>
 
 <style>
-	.vids{
-		overflow-y:auto;
-		box-sizing: border-box;
-	}
-	main {
-		
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
 
-		display: grid;
-		grid-gap: 10px;
-		grid-template-rows: 1fr 60vh 2fr;
-
-	}
-
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
 </style>

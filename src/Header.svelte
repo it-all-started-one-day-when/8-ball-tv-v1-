@@ -22,6 +22,11 @@ let countvalue;
       on:change={x}
     />
     <p>{countvalue}</p>
+    <nav>
+        <a href="#/">home</a>
+        <a href="#/about">about</a>
+        
+    </nav>
     <img
             src="https://cdn.glitch.global/333f567d-27a7-460e-86b4-8ea506dd9e09/8balltv-logo1.png?v=1644513101139"
             width="50"

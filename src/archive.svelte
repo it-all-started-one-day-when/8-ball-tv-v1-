@@ -1,4 +1,6 @@
 <script context = "module">
+
+   export let filterfunc=(vidId)=> {ALL_VIDEOS.find((e) => e.id ==vidId)};
   
 
   export const ONE_VIDEO = {
